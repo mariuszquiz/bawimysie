@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz KC – wersja przeglądarkowa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Quiz z Kodeksu cywilnego</h1>
+
+    <section class="panel">
+      <div class="row">
+        <label for="limit">Liczba pytań:</label>
+        <input id="limit" type="number" min="1" max="200" value="20" />
+        <button id="startBtn">Start</button>
+      </div>
+
+      <details>
+        <summary>Wczytaj własny plik pytań (JSON)</summary>
+        <input type="file" id="fileInput" accept=".json" />
+        <small>Domyślnie strona ładuje <code>questions.json</code> z tego samego folderu.</small>
+      </details>
+    </section>
+
+    <section id="quiz" class="quiz hidden">
+      <div class="meta">
+        <span id="counter"></span>
+        <span id="article"></span>
+      </div>
+      <div id="question" class="question"></div>
+      <div id="answers" class="answers"></div>
+      <div class="controls">
+        <button id="nextBtn" class="hidden">Następne</button>
+      </div>
+    </section>
+
+    <section id="result" class="result hidden">
+      <h2>Wynik</h2>
+      <p id="score"></p>
+      <button id="restartBtn">Zagraj ponownie</button>
+    </section>
+
+    <footer>
+      <small>Twoje pytania nie są wysyłane nigdzie – wszystko działa lokalnie w przeglądarce.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
